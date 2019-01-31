@@ -35,7 +35,7 @@ end
 
 
 def shortened_tweet_truncator(string)
-  string.length > 140 ? "#{string[0...136]}..." : string
+  string.length >= 140 ? "#{string[0...136]}..." : string
 end
 
 #word_substituter("Hey guys, can anyone teach me how 2 b cool? I really want 2 b the best @ everything, u know what I mean? Tweeting is super fun u guys!!!!")
