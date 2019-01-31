@@ -15,10 +15,10 @@ end
 def word_substituter(string)
   arr = string.split(" ")
     arr.collect do |w|
-      if dictionary.has_key?(w)
-        dictionary.each do |long, short|
-          w = short if w == long
-        end
+      if dictionary.has_key?(w.downcase)
+        w = dictionary[w.downcase]
+      else
+        w
       end
     end
   arr.join(" ")
@@ -34,7 +34,7 @@ end
 
 
 def shortened_tweet_truncator(string)
-  string.length > 140 ? "#{string[0...137]}..." : string
+  string.length > 140 ? "#{string[0...136]}..." : string
 end
 
 #word_substituter("Hey guys, can anyone teach me how 2 b cool? I really want 2 b the best @ everything, u know what I mean? Tweeting is super fun u guys!!!!")
