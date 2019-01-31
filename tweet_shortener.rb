@@ -13,15 +13,13 @@ def dictionary
 end
 
 def word_substituter(string)
-  arr = string.split(" ")
-    arr.collect do |w|
-      if dictionary.has_key?(w.downcase)
-        w = dictionary[w.downcase]
-      else
-        w
-      end
+  string.split.collect do |w|
+    if dictionary.has_key?(w.downcase)
+      w = dictionary[w.downcase]
+    else
+      w
     end
-  arr.join(" ")
+  end.join(" ")
 end
 
 def bulk_tweet_shortener(string)
