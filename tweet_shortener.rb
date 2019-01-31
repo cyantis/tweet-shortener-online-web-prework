@@ -13,15 +13,13 @@ def dictionary
 end
 
 def word_substituter(string)
-  arr = string.split
-  arr.each do |w|
+  string.split.collect do |w|
     if dictionary.keys.include?(w)
       w = dictionary[w]
     else
       w
     end
-  end
-  arr.join(" ")
+  end.join(" ")
 end
 
 def bulk_tweet_shortener(string)
