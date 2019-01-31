@@ -15,7 +15,7 @@ end
 def word_substituter(string)
   arr = string.split(" ")
     arr.collect do |w|
-      if dictionary.include?(w)
+      if dictionary.has_key?(w)
         dictionary.each do |long, short|
           w = short if w == long
         end
