@@ -14,7 +14,7 @@ end
 
 def word_substituter(string)
   arr = string.split
-  arr.split.collect do |w|
+  arr.collect do |w|
     if dictionary.keys.include?(w)
       w = dictionary[w]
     else
