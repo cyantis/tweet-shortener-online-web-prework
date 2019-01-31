@@ -30,7 +30,7 @@ def bulk_tweet_shortener(string)
 end
 
 def selective_tweet_shortener(string)
-  string.length > 140 ? word_substituter(string) : string
+  string.length >= 140 ? word_substituter(string) : string
 end
 
 
